@@ -8,7 +8,7 @@ import { VocabComponent } from './vocab/vocab.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '',pathMatch: 'full'},
+  {path:'', redirectTo: 'home',pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: 'vocabs', component: VocabComponent},
   { path: 'students', component: StudentComponent}

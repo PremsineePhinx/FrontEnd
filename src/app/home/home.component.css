@@ -6,6 +6,7 @@
     color: #FFFBE4 ;
   }
   .mat-card-title{
+    font-family: Roboto,'Prompt', sans-serif;
     font-size: 32px;
   }
   .mat-card-subtitle{
@@ -14,22 +15,22 @@
   }
   .cardstat {
     color: aliceblue;
-      height: 80px;
-      width: 250px;
+      height: 80%;
+      width: 80%;
   }
   .cardgraph{
-    height: 450px;
-    width: 650px;
+    height: 90%;
+    width: 90%;
   }  
   .cardprogress{
-    height: 300px;
-    width: 250px;
+    height: 80%;
+    width: 80%;
   } 
   .header-image {
       background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
       background-size: cover;
     }
-  .mat-grid-list{
-    margin-bottom: 20px;
-  }
+.container{
+  margin-top: 80px;
+}
   

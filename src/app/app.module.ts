@@ -11,7 +11,8 @@ import { StudentComponent } from './student/student.component';
 import { VocabComponent } from './vocab/vocab.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { MaterialModule} from './/material.module'
+import { MaterialModule} from './/material.module';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { MaterialModule} from './/material.module'
     MyTableComponent,
     StudentComponent,
     VocabComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

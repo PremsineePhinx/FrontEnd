@@ -1,68 +1,71 @@
-<mat-form-field>
-    <mat-label>Semester</mat-label>
-    <mat-select #semester value="1/2561" (selectionChange)="triggerResize()">
-        <mat-option value="1/2561">1/2561</mat-option>
-        <mat-option value="2/2561">2/2561</mat-option>
-    </mat-select>
-</mat-form-field>
-<mat-form-field>
-      <mat-label>Subject</mat-label>
-      <mat-select #subject value="118111" (selectionChange)="triggerResize()">
-        <mat-option value="118111">118111</mat-option>
-        <mat-option value="118112">118112</mat-option>
-        <mat-option value="118113">118113</mat-option>
-        <mat-option value="118114">118114</mat-option>
+<app-header></app-header>
+<div class="container">
+  <mat-form-field>
+      <mat-label>Semester</mat-label>
+      <mat-select #semester value="1/2561" (selectionChange)="triggerResize()">
+          <mat-option value="1/2561">1/2561</mat-option>
+          <mat-option value="2/2561">2/2561</mat-option>
       </mat-select>
-</mat-form-field>
-<mat-form-field>
-    <mat-label>Section</mat-label>
-    <mat-select #section value="1" (selectionChange)="triggerResize()">
-      <mat-option value="1">section 1</mat-option>
-    </mat-select>
-</mat-form-field>
-
-<button mat-raised-button color="primary" (click)="ExportTOExcel()">Export as Excel</button>
-
-
-
-<div class="table" #TABLE>
-  <mat-form-field class="search">
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-    <table mat-table
-       [dataSource]="dataSource" multiTemplateDataRows
-       class="mat-elevation-z8" >
-  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-  </ng-container>
+  <mat-form-field>
+        <mat-label>Subject</mat-label>
+        <mat-select #subject value="118111" (selectionChange)="triggerResize()">
+          <mat-option value="118111">118111</mat-option>
+          <mat-option value="118112">118112</mat-option>
+          <mat-option value="118113">118113</mat-option>
+          <mat-option value="118114">118114</mat-option>
+        </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>Section</mat-label>
+      <mat-select #section value="1" (selectionChange)="triggerResize()">
+        <mat-option value="1">section 1</mat-option>
+      </mat-select>
+  </mat-form-field>
 
-  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-  <ng-container matColumnDef="expandedDetail">
-    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-      <div class="example-element-detail"
-           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-        <div class="example-element-diagram">
-          <div class="example-element-position"> {{element.position}} </div>
-          <div class="example-element-symbol"> {{element.symbol}} </div>
-          <div class="example-element-name"> {{element.name}} </div>
-          <div class="example-element-weight"> {{element.weight}} </div>
+  <button mat-raised-button color="primary" (click)="ExportTOExcel()">Export as Excel</button>
+
+
+
+  <div class="table" #TABLE>
+    <mat-form-field class="search">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+      <table mat-table
+        [dataSource]="dataSource" multiTemplateDataRows
+        class="mat-elevation-z8" >
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+      <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail"
+            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-diagram">
+            <div class="example-element-position"> {{element.position}} </div>
+            <div class="example-element-symbol"> {{element.symbol}} </div>
+            <div class="example-element-name"> {{element.name}} </div>
+            <div class="example-element-weight"> {{element.weight}} </div>
+          </div>
+          <div class="example-element-description">
+            {{element.description}}
+            <span class="example-element-description-attribution"> -- Wikipedia </span>
+          </div>
         </div>
-        <div class="example-element-description">
-          {{element.description}}
-          <span class="example-element-description-attribution"> -- Wikipedia </span>
-        </div>
-      </div>
-    </td>
-  </ng-container>
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
-      class="example-element-row"
-      [class.example-expanded-row]="expandedElement === element"
-      (click)="expandedElement = element">
-  </tr>
-  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
 
+  </div>
 </div>

@@ -32,6 +32,3 @@ nav{
   transition: 100ms ease-in-out;
   transform: rotate(0deg);
 }
-.container{
-  margin: 100px 100px 0px 100px;
-}
