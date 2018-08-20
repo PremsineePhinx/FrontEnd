@@ -6,7 +6,6 @@
     color: #FFFBE4 ;
   }
   .mat-card-title{
-    font-family: Roboto,'Prompt', sans-serif;
     font-size: 32px;
   }
   .mat-card-subtitle{
@@ -31,6 +30,6 @@
       background-size: cover;
     }
 .container{
-  margin-top: 80px;
+  margin-top: 90px;
 }
   

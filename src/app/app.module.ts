@@ -12,7 +12,8 @@ import { VocabComponent } from './vocab/vocab.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MaterialModule} from './/material.module';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { HeaderComponent } from './header/header.component'
     StudentComponent,
     VocabComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

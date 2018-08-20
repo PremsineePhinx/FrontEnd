@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #fafafa; }
+body { margin: 0; font-family: 'Roboto','Prompt', sans-serif; background-color: #fff; }
 .container{
-    background: #fff;
     margin: 20px 100px 0px 100px;
-  }
+}
+.mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button{
+    color: #fff;
+    background-color: #720D5D;
+}
+.mat-input-element {
+    color: #4E0D3A;
+}
+.mat-icon-button, .mat-icon{
+    color: #720D5D
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    color: #720D5D;
+}
