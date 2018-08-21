@@ -2,7 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto','Prompt', sans-serif; background-color: #fff; }
+body { margin: 0; font-family: 'Roboto','Prompt', sans-serif; background-color: #fafafa; }
 .container{
     margin: 20px 100px 0px 100px;
 }

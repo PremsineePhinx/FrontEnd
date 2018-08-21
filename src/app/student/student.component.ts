@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -21,20 +22,15 @@ export class StudentComponent implements OnInit {
   expandedElement: PeriodicElement;
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-
+  code = this.route.snapshot.url
 
   @ViewChild('TABLE') table: ElementRef;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  //selected
-
-  selectedsemester = '1/2561';
-  selectedsubject  =  '018111';
-  selectedsection  = '1';
-
-  constructor() { }
+  constructor(private route: ActivatedRoute,) { }
 
   ngOnInit() {
+
     this.dataSource.paginator = this.paginator;
   }
 
@@ -51,9 +47,6 @@ export class StudentComponent implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, 'สถิติคำศัพท์.xlsx');
     
-  }
-  onSemesterSelect(event){
-    console.log(event.target.value)
   }
 }
 

@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container">
+  <mat-form-field>
+      <mat-label>Semester</mat-label>
+      <mat-select #semester placeholder="Selected Semester" (selectionChange)="getData($event)" >
+          <mat-option *ngFor="let semester of semesters" [value]="semester.semester">{{semester.semester}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <mat-grid-list cols="4" rowHeight="200px">
+      <mat-grid-tile colspan ="1" rowspan="1" *ngFor="let data of datas">
+        <mat-card>
+          <mat-card-content>
+            <span>courseID: {{data.courseID}}</span><br />
+          <span> Course Name: {{data.courseName}}</span><br />
+          <span> section : {{data.section}}</span><br />
+          <span> teacher: {{data.teacher}}</span>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button routerLink='/students/{{semestertemp}}/{{data.courseID}}/{{data.section}}'>see more</a>
+        </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+</div>

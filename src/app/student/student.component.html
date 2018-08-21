@@ -1,28 +1,5 @@
 <app-header></app-header>
 <div class="container">
-  <mat-form-field>
-      <mat-label>Semester</mat-label>
-      <mat-select #semester [value]="selectedsemester" (change)="onSemesterSelect($event)">
-          <mat-option [value]="1/2561">1/2561</mat-option>
-          <mat-option [value]="2/2561">2/2561</mat-option>
-      </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-        <mat-label>Subject</mat-label>
-        <mat-select #subject [(value)]="selectedsubject">
-          <mat-option value="018111">018111</mat-option>
-          <mat-option value="018112">018112</mat-option>
-          <mat-option value="018113">018113</mat-option>
-          <mat-option value="018114">018114</mat-option>
-        </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-      <mat-label>Section</mat-label>
-      <mat-select #section [(value)]="selectedsection">
-        <mat-option value="1">section 1</mat-option>
-      </mat-select>
-  </mat-form-field>
-
   <button mat-raised-button (click)="ExportTOExcel()">Export as Excel</button>
 
   <div class="table" #TABLE>

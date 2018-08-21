@@ -14,6 +14,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MaterialModule} from './/material.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component'
+import { StudentService } from './services/student.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 
 @NgModule({
   imports: [
@@ -21,7 +24,8 @@ import { FooterComponent } from './footer/footer.component'
     BrowserAnimationsModule,
     LayoutModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
     ],
   declarations: [
     AppComponent,
@@ -31,9 +35,10 @@ import { FooterComponent } from './footer/footer.component'
     VocabComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CoureInsectionComponent
   ],
-  providers: [],
+  providers: [ StudentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
