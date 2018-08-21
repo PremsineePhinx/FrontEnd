@@ -16,6 +16,6 @@ export class StudentService {
     return this.http.post(this.apiURL + 'getCourseInSemester/',semester);
   }
   getStudent(section){
-    return this.http.get(this.apiURL + 'getStudentInSection/' + section);
+    return this.http.post(this.apiURL + 'getStudentInSection/',section);
   }
 }
