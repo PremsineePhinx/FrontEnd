@@ -27,7 +27,7 @@ export class StudentComponent implements OnInit {
 
   param: any;
   dataOfapi: any[] = [];
-  columnsToDisplay = ['studentID', 'studentName'];
+  columnsToDisplay = ['studentID', 'studentName','login','last_login'];
   expandedElement: User;
   dataSource: MatTableDataSource<User>;
   datas: any;

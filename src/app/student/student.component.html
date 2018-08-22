@@ -1,3 +1,4 @@
+<app-my-nav></app-my-nav>
 <app-header></app-header>
 <div class="container">
   <button mat-raised-button (click)="ExportTOExcel()">Export as Excel</button>
@@ -23,7 +24,14 @@
         <div class="example-element-detail"
             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
           <div class="example-element-description">
-            {{element.studentID}}
+            <span>Stage1 : {{element.Stage1}}</span>
+            <span>Stage2 : {{element.Stage2}}</span>
+            <span>Stage3 : {{element.Stage3}}</span>
+            <span>Stage4 : {{element.Stage4}}</span>
+            <span>Stage5 : {{element.Stage5}}</span> 
+            <span>Stage6 : {{element.Stage6}}</span>
+            <span>Stage7 : {{element.Stage7}}</span>
+            <span>Stage8 : {{element.Stage8}}</span>
           </div>
         </div>
       </td>
@@ -40,3 +48,4 @@
 
   </div>
 </div>
+<app-footer></app-footer>
