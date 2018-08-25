@@ -6,6 +6,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MaterialModule} from './/material.module';
 
+//firebase
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+//enviroment
+import { environment } from '../environments/environment';
+//service
+import { StudentService } from './services/student.service';
+import { VocabService } from './services/vocab.service';
 //component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -18,17 +27,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component'
 import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 import { LoginComponent } from './login/login.component';
+import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.component';
+import { VocabAllComponent } from './vocab-all/vocab-all.component';
 
-//service
-import { StudentService } from './services/student.service';
 
-//firebase
-import * as firebase from 'firebase';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-
-//enviroment
-import { environment } from '../environments/environment';
 
 firebase.initializeApp(environment.firebaseConfig);
 @NgModule({
@@ -37,14 +39,12 @@ firebase.initializeApp(environment.firebaseConfig);
     BrowserAnimationsModule,
     LayoutModule,
     MaterialModule,
-    AppRoutingModule,
     HttpClientModule,
     AngularFireAuthModule,
-
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AppRoutingModule,
     ],
   declarations: [
-    AppComponent,
     MyNavComponent,
     MyTableComponent,
     StudentComponent,
@@ -53,9 +53,12 @@ firebase.initializeApp(environment.firebaseConfig);
     HeaderComponent,
     FooterComponent,
     CoureInsectionComponent,
-    LoginComponent
+    LoginComponent,
+    VocabByCourseComponent,
+    VocabAllComponent,
+    AppComponent,
   ],
-  providers: [ StudentService ],
+  providers: [ StudentService, VocabService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

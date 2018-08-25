@@ -1,0 +1,51 @@
+<app-my-nav></app-my-nav>
+<app-header></app-header>
+<div class="container">
+  <button mat-raised-button  (click)="ExportTOExcel()">Export as Excel</button>
+  
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="ค้นหา">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8" #TABLE>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+ 
+      <ng-container matColumnDef="vocabID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.vocabID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hiragana">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Hiragana </th>
+        <td mat-cell *matCellDef="let element"> {{element.hiragana}} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="romanji">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Romanji </th>
+        <td mat-cell *matCellDef="let element"> {{element.romanji}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="thai">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Thai </th>
+        <td mat-cell *matCellDef="let element"> {{element.thai}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="QuestionStatistic">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Question Statistic </th>
+        <td mat-cell *matCellDef="let element"> {{element.QuestionStatistic}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mistakeStatistic">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mistake Statistic </th>
+        <td mat-cell *matCellDef="let element"> {{element.mistakeStatistic}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

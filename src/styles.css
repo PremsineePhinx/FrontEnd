@@ -8,13 +8,13 @@ body { margin: 0; font-family: 'Roboto','Prompt', sans-serif; background-color: 
 }
 .mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button{
     color: #fff;
-    background-color: #720D5D;
+    background-color: #541349;
 }
 .mat-input-element {
     color: #4E0D3A;
 }
 .mat-icon-button, .mat-icon{
-    color: #720D5D
+    color: #541349
 }
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
     color: #720D5D;

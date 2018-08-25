@@ -69,7 +69,7 @@ export class StudentComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     
     /* save to file */
-    XLSX.writeFile(wb, 'สถิติคำศัพท์.xlsx');
+    XLSX.writeFile(wb, 'ข้อมูลนักศึกษา.xlsx');
     
   }
 }
