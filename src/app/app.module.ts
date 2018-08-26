@@ -23,7 +23,6 @@ import { MyTableComponent } from './my-table/my-table.component';
 import { StudentComponent } from './student/student.component';
 import { VocabComponent } from './vocab/vocab.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component'
 import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 import { LoginComponent } from './login/login.component';
@@ -50,7 +49,6 @@ firebase.initializeApp(environment.firebaseConfig);
     StudentComponent,
     VocabComponent,
     HomeComponent,
-    HeaderComponent,
     FooterComponent,
     CoureInsectionComponent,
     LoginComponent,

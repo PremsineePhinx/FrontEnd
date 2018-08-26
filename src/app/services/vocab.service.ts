@@ -16,4 +16,7 @@ export class VocabService {
   getVocabByCourse(course){
     return this.http.get(this.apiURL + 'getVocabStatbyCourse/' + course);
   }
+  getVocabTop(){
+    return this.http.get(this.apiURL + 'getTopVocabStat/6');
+  }
 }

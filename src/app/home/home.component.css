@@ -6,7 +6,8 @@
     color: #FFFBE4 ;
   }
   .mat-card-title{
-    font-size: 32px;
+    font-family: 'Roboto','Prompt', sans-serif;
+    font-size: 28px;
   }
   .mat-card-subtitle{
     font-size: 28px;
