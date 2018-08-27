@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 //service
 import { StudentService } from './services/student.service';
 import { VocabService } from './services/vocab.service';
+import { AuthService } from './services/auth.service';
 //component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -28,8 +29,7 @@ import { CoureInsectionComponent } from './coure-insection/coure-insection.compo
 import { LoginComponent } from './login/login.component';
 import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.component';
 import { VocabAllComponent } from './vocab-all/vocab-all.component';
-
-
+import { HeaderComponent } from './header/header.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 @NgModule({
@@ -49,6 +49,7 @@ firebase.initializeApp(environment.firebaseConfig);
     StudentComponent,
     VocabComponent,
     HomeComponent,
+    HeaderComponent,
     FooterComponent,
     CoureInsectionComponent,
     LoginComponent,
@@ -56,7 +57,7 @@ firebase.initializeApp(environment.firebaseConfig);
     VocabAllComponent,
     AppComponent,
   ],
-  providers: [ StudentService, VocabService ],
+  providers: [ StudentService, VocabService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

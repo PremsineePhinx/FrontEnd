@@ -12,10 +12,10 @@ import { VocabAllComponent } from './vocab-all/vocab-all.component';
 const routes: Routes = [
   {path:'', redirectTo: 'home',pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
-  { path: 'Subject', component: VocabComponent},
-  { path: 'VocabStat', component: VocabAllComponent},
+  { path: 'VocabStats', component: VocabComponent},
+  { path: 'VocabStatsAll', component: VocabAllComponent},
   { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent},
-  { path: 'course', component: CoureInsectionComponent},
+  { path: 'Course', component: CoureInsectionComponent},
   { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent},
   { path: 'login', component: LoginComponent }
 ];
