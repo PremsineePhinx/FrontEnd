@@ -28,7 +28,6 @@ import { FooterComponent } from './footer/footer.component'
 import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 import { LoginComponent } from './login/login.component';
 import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.component';
-import { VocabAllComponent } from './vocab-all/vocab-all.component';
 import { HeaderComponent } from './header/header.component';
 
 firebase.initializeApp(environment.firebaseConfig);
@@ -54,7 +53,6 @@ firebase.initializeApp(environment.firebaseConfig);
     CoureInsectionComponent,
     LoginComponent,
     VocabByCourseComponent,
-    VocabAllComponent,
     AppComponent,
   ],
   providers: [ StudentService, VocabService,AuthService],

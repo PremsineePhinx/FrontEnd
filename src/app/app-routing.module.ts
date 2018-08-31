@@ -7,13 +7,11 @@ import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.compon
 import { HomeComponent } from './home/home.component';
 import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 import { LoginComponent } from './login/login.component';
-import { VocabAllComponent } from './vocab-all/vocab-all.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home',pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: 'VocabStats', component: VocabComponent},
-  { path: 'VocabStatsAll', component: VocabAllComponent},
   { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent},
   { path: 'Course', component: CoureInsectionComponent},
   { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent},

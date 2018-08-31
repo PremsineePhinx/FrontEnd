@@ -4,7 +4,7 @@
     <mat-grid-tile colspan ="2" rowspan="3">
         <mat-card class="cardgraph">
             <mat-card-header>
-                <mat-card-title>จำนวนนักศึกษาแบ่งตามรายวิชา</mat-card-title>
+                <mat-card-title>จำนวนนักศึกษาทั้งหมดแบ่งตามรายวิชา</mat-card-title>
             </mat-card-header> 
             <mat-card-content>
                 <canvas id="myChart" max-width=200 height="200"></canvas>
@@ -14,8 +14,8 @@
     <mat-grid-tile colspan="1" rowspan="1">
         <mat-card class="cardstat" style="background-color:#720D5D">
             <mat-card-header>
-                <mat-card-title></mat-card-title>
-                <mat-card-subtitle>Student</mat-card-subtitle>
+                <mat-card-title>{{student}}</mat-card-title>
+                <mat-card-subtitle>นักศึกษาใช้งานแอปพลิเคชัน</mat-card-subtitle>
                 <mat-icon>face</mat-icon>
             </mat-card-header> 
         </mat-card>

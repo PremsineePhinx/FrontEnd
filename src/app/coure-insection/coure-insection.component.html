@@ -9,17 +9,16 @@
   </mat-form-field>
   <mat-grid-list cols="4" rowHeight="200px">
       <mat-grid-tile colspan ="1" rowspan="1" *ngFor="let data of datas">
+        <a routerLink='/students/{{semestertemp}}/{{data.courseID}}/{{data.section}}'>
         <mat-card>
           <mat-card-content>
             <span>courseID: {{data.courseID}}</span><br />
           <span> Course Name: {{data.courseName}}</span><br />
           <span> section : {{data.section}}</span><br />
           <span> teacher: {{data.teacher}}</span>
-        </mat-card-content>
-        <mat-card-actions>
-          <a mat-button routerLink='/students/{{semestertemp}}/{{data.courseID}}/{{data.section}}'>Click</a>
-        </mat-card-actions>
+          </mat-card-content>
         </mat-card>
+      </a>
       </mat-grid-tile>
   </mat-grid-list>
 </div>

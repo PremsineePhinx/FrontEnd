@@ -18,4 +18,10 @@ export class StudentService {
   getStudent(section){
     return this.http.post(this.apiURL + 'getStudentInSection/',section);
   }
+  getEnrollStudent(semester){
+    return this.http.post(this.apiURL + 'getEnrollStudent/',semester);
+  }
+  getPlayedStudent(semester){
+    return this.http.post(this.apiURL + 'getPlayedStudent/',semester);
+  }
 }
