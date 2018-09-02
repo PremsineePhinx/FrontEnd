@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VocabService {
 
-  private apiURL = 'https://jap-api-uat.herokuapp.com/api/'
+  private apiURL = 'http://159.65.142.130/api/'
 
   constructor(private http:HttpClient) { }
 

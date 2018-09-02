@@ -23,6 +23,7 @@ export class VocabByCourseComponent implements OnInit {
   dataSource: MatTableDataSource<Vocab>
   datas: any;
   param: any;
+  datasExport: any;
   displayedColumns: string[] = ['vocabID','hiragana', 'romanji', 'thai', 'QuestionStatistic','mistakeStatistic'];
 
 
@@ -35,6 +36,7 @@ export class VocabByCourseComponent implements OnInit {
   }
 
   ngOnInit() {
+    //get data from API
     this.api.getVocabByCourse(this.param.course)
     .subscribe(data => {this.datas = data
     this.dataSource = new MatTableDataSource(this.datas);
@@ -42,20 +44,22 @@ export class VocabByCourseComponent implements OnInit {
     this.dataSource.sort = this.sort;
     })
   }
-
+  //filter table
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   ExportTOExcel()
   {
-    const ws: XLSX.WorkSheet=XLSX.utils.table_to_sheet(this.table.nativeElement);
+    this.api.getVocabByCourse(this.param.course)
+    .subscribe(data => {this.datasExport = data
+    const ws: XLSX.WorkSheet=XLSX.utils.json_to_sheet(this.datasExport);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     
     /* save to file */
     XLSX.writeFile(wb, 'สถิติคำศัพท์.xlsx');
-    
+    })
   }
 
 }

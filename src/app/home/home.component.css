@@ -3,20 +3,29 @@
     right: 80px;
     top: 25px; 
     font-size: 80px;
-    color: #FFFBE4 ;
+    color: rgba(255, 255, 255, 0.925) ;
+  }
+  .mat-card{
+    font-family: 'Roboto','Prompt', sans-serif;
   }
   .mat-card-title{
-    font-family: 'Roboto','Prompt', sans-serif;
-    font-size: 28px;
+    font-size: 22px;
   }
   .mat-card-subtitle{
-    font-size: 20px;
+    font-size: 22px;
     color: aliceblue;
   }
   .cardstat {
     color: aliceblue;
-      height: 80%;
-      width: 80%;
+    height: 80%;
+    width: 80%;
+    background: -moz-linear-gradient(-45deg, rgb(114,13,93) 0%, rgba(255, 138, 101,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(114,13,93)), color-stop(100%, rgba(255, 138, 101,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(114,13,93) 0%, rgba(255, 138, 101,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(114,13,93) 0%, rgba(255, 138, 101,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(114,13,93) 0%, rgba(255, 138, 101,1) 100%);
+    background: linear-gradient(135deg, rgba(114,13,93) 0%, rgba(255, 138, 101,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1d1f', endColorstr='#df405a', GradientType=1 );
   }
   .cardgraph{
     height: 90%;
