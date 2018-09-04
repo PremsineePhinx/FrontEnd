@@ -56,13 +56,19 @@ export class StudentComponent implements OnInit {
     this.api.getStudent(this.json)
     .subscribe(data=> {this.datas = data
       for(let i = 0 ; i < this.datas.length; i++){
-        this.temp = this.datas[i].last_login
-        var time = new Date(this.temp);
+        var time
+        if(this.datas[i].last_login == null){
+          time = "-"
+        }else{
+          this.temp = this.datas[i].last_login
+          time = new Date(this.temp);
+          time = time.toDateString();
+        }
             this.students.push({
               studentID:this.datas[i].studentID,
               studentName: this.datas[i].studentName,              
               login: this.datas[i].login,
-              last_login: time.toDateString(),
+              last_login: time,
               stage1:this.datas[i].stage1,
               stage2:this.datas[i].stage2,
               stage3:this.datas[i].stage3,
@@ -94,7 +100,8 @@ export class StudentComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     
     /* save to file */
-    XLSX.writeFile(wb, 'ข้อมูลนักศึกษา.xlsx');
+    var nameFile =  "ข้อมูลนักศึกษา_" + this.param.courseID + "_" + this.param.section + "_" + this.param.semester + this.param.year +".xlsx"
+    XLSX.writeFile(wb, nameFile );
     })
   }
 }

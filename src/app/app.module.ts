@@ -29,6 +29,7 @@ import { CoureInsectionComponent } from './coure-insection/coure-insection.compo
 import { LoginComponent } from './login/login.component';
 import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 firebase.initializeApp(environment.firebaseConfig);
 @NgModule({
@@ -41,6 +42,7 @@ firebase.initializeApp(environment.firebaseConfig);
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
+    FormsModule
     ],
   declarations: [
     MyNavComponent,

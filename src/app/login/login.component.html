@@ -1,24 +1,23 @@
 <div class="body">
-<div class='box'>
-  <div class='box-form'>
-    <div class='box-login-tab'></div>
-    <div class='box-login-title'>
-      <div class='i i-login'></div><h2>LOGIN</h2>
+<div class="box">
+  <div class="box-form">
+    <div class="box-login-tab"></div>
+    <div class="box-login-title">
+      <div class="i i-login"></div><h2>LOGIN</h2>
     </div>
-    <div class='box-login'>
-      <div class='fieldset-body' id='login_form'>
-          <form>
-        	<p class='field'>
-          <label for='user'>Username</label>
-          <input type='text' id='user' name='user' title='Username' />
-          <span id='valida' class='i i-warning'></span>
+    <div class="box-login">
+      <div class="fieldset-body" id="login_form">
+          <form #loginForm="ngForm" (ngSubmit)="login()">       
+          <p *ngIf="invalid" style="color:rgb(255, 0, 43)">invalid email or password </p>
+        	<p class="field">
+          <label for="user">Email</label>
+          <input [(ngModel)]="user.email" type="text" id="email" name="email" title="Email" #email="ngModel" required>
           </p>
-      	  <p class='field'>
-          <label for='pass'>PASSWORD</label>
-          <input type='password' id='pass' name='pass' title='Password' />
-          <span id='valida' class='i i-close'></span>
+      	  <p class="field">
+          <label for="pass">PASSWORD</label>
+          <input [(ngModel)]="user.password"  type="password" id="pass" name="password"  #password="ngModel" title="Password" required>
           </p>
-          <button type='submit' id='do_login'title='Log In'>Log In</button>
+          <button type="submit" id="do_login"title="Log In">Log In</button>
           </form>
       </div>
     </div>

@@ -7,16 +7,16 @@
           <mat-option *ngFor="let semester of semesters" [value]="semester.semester">{{semester.semester}}</mat-option>
       </mat-select>
   </mat-form-field>
-  <mat-grid-list cols="4" rowHeight="200px">
+  <mat-grid-list cols="3" rowHeight="200px">
       <mat-grid-tile colspan ="1" rowspan="1" *ngFor="let data of datas">
         <a routerLink='/students/{{semestertemp}}/{{data.courseID}}/{{data.section}}'>
         <mat-card>
-          <mat-card-content>
-            <span>courseID: {{data.courseID}}</span><br />
-          <span> Course Name: {{data.courseName}}</span><br />
-          <span> section : {{data.section}}</span><br />
-          <span> teacher: {{data.teacher}}</span>
-          </mat-card-content>
+          <mat-card-header>
+            <mat-card-title>CourseID: {{data.courseID}}</mat-card-title>
+            <mat-card-title>Course Name: {{data.courseName}}</mat-card-title>
+            <mat-card-title>Section : {{data.section}}</mat-card-title>
+            <mat-card-title>Teacher: {{data.teacher}}</mat-card-title>
+          </mat-card-header>
         </mat-card>
       </a>
       </mat-grid-tile>

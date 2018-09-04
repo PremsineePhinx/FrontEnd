@@ -1,3 +1,6 @@
 a{
     text-decoration: none;
 }
+.mat-card-header .mat-card-title{
+    font-size: 16px;
+}

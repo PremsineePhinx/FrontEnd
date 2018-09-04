@@ -58,7 +58,8 @@ export class VocabByCourseComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     
     /* save to file */
-    XLSX.writeFile(wb, 'สถิติคำศัพท์.xlsx');
+    var nameFile = "สถิติคำศัพท์_" + this.param.course + ".xlsx"
+    XLSX.writeFile(wb, nameFile);
     })
   }
 
