@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,13 @@ export class VocabService {
 
   constructor(private http:HttpClient) { }
 
-  getVocabByType(){
+  getVocabByType():Observable<any>{
     return this.http.get(this.apiURL + 'getVocabStatbyType/');
   }
-  getVocabByCourse(course){
+  getVocabByCourse(course):Observable<any>{
     return this.http.get(this.apiURL + 'getVocabStatbyCourse/' + course);
   }
-  getVocabTop(){
+  getVocabTop():Observable<any>{
     return this.http.get(this.apiURL + 'getTopVocabStat/6');
   }
 }
