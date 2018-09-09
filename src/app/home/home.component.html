@@ -13,9 +13,9 @@
     </mat-grid-tile>
     <mat-grid-tile colspan="1" rowspan="1">
         <mat-card class="cardstat">
-            <mat-card-header>
+            <mat-card-header >
                 <mat-card-title>นักศึกษาใช้งานแอปพลิเคชัน</mat-card-title>
-                <mat-card-subtitle>{{student}} คน</mat-card-subtitle>
+                <mat-card-subtitle *ngFor="let student of students$ | async">{{student.amount}} คน</mat-card-subtitle>
             </mat-card-header> 
         </mat-card>
     </mat-grid-tile>

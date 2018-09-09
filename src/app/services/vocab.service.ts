@@ -12,13 +12,13 @@ export class VocabService {
 
   constructor(private http:HttpClient) { }
 
-  getVocabByType():Observable<any>{
+  getVocabByType(){
     return this.http.get(this.apiURL + 'getVocabStatbyType/');
   }
-  getVocabByCourse(course):Observable<any>{
+  getVocabByCourse(course){
     return this.http.get(this.apiURL + 'getVocabStatbyCourse/' + course);
   }
-  getVocabTop():Observable<any>{
+  getVocabTop(){
     return this.http.get(this.apiURL + 'getTopVocabStat/6');
   }
 }

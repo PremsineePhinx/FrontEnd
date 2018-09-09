@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart} from 'chart.js';
 import { VocabService } from '../services/vocab.service'
 import { StudentService } from '../services/student.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   topWord: any[] = [];
   semester: any;
   course: any;
-  student: any;
+  students$: Observable<any>;
   constructor(private apiVocab:VocabService,private apiStudent:StudentService) { }
 
   ngOnInit() {
@@ -65,10 +66,7 @@ export class HomeComponent implements OnInit {
       })  
 
 
-      this.apiStudent.getPlayedStudent(this.semester[0])
-        .subscribe(datas => {this.student = datas[0].amount})
-
-
+      this.students$ = this.apiStudent.getPlayedStudent(this.semester[0]);
     })
     this.apiVocab.getVocabTop()
       .subscribe(data => {this.top = data

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,16 +11,16 @@ export class StudentService {
 
   constructor(private http:HttpClient) { }
 
-  getSemster():Observable<any>{
+  getSemster(){
     return this.http.get(this.apiURL + 'getSemester/');
   }
-  getCourse(semester):Observable<any>{
+  getCourse(semester){
     return this.http.post(this.apiURL + 'getCourseInSemester/',semester);
   }
-  getStudent(section):Observable<any>{
+  getStudent(section){
     return this.http.post(this.apiURL + 'getStudentInSection/',section);
   }
-  getEnrollStudent(semester):Observable<any>{
+  getEnrollStudent(semester){
     return this.http.post(this.apiURL + 'getEnrollStudent/',semester);
   }
   getPlayedStudent(semester):Observable<any>{
