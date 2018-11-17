@@ -26,7 +26,6 @@ export class CoureInsectionComponent implements OnInit {
       semester: event.value
     })
     var json = Object.assign({},...this.semester);
-    console.log(json)
     this.api.getCourse(json)
     .subscribe(data=> {this.datas = data})
   }

@@ -3,7 +3,7 @@
 <div class="container">
   <mat-form-field>
       <mat-label>Semester</mat-label>
-      <mat-select #semester placeholder="Selected Semester" (selectionChange)="getData($event)" >
+      <mat-select #semester placeholder="Semester" (selectionChange)="getData($event)" >
           <mat-option *ngFor="let semester of semesters" [value]="semester.semester">{{semester.semester}}</mat-option>
       </mat-select>
   </mat-form-field>
