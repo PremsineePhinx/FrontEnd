@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material'
-
+import { OAuthService } from 'angular-oauth2-oidc'
 @Component({
   selector: 'app-my-nav',
   templateUrl: './my-nav.component.html',
@@ -16,7 +16,7 @@ export class MyNavComponent {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver , private oauthService:OAuthService) {}
 
   @ViewChild('sidenav') sidenav: MatSidenav;
   
@@ -34,4 +34,7 @@ export class MyNavComponent {
     title = title
   }
   
+  logout(){
+    this.oauthService.logOut();
   }
+}

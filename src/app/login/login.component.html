@@ -6,19 +6,10 @@
       <div class="i i-login"></div><h2>LOGIN</h2>
     </div>
     <div class="box-login">
-      <div class="fieldset-body" id="login_form">
-          <form #loginForm="ngForm" (ngSubmit)="login()">       
-          <p *ngIf="invalid" style="color:rgb(255, 0, 43)">invalid email or password </p>
-        	<p class="field">
-          <label for="user">Email</label>
-          <input [(ngModel)]="user.email" type="text" id="email" name="email" title="Email" #email="ngModel" required>
-          </p>
+      <div class="fieldset-body" id="login_form">     
       	  <p class="field">
-          <label for="pass">PASSWORD</label>
-          <input [(ngModel)]="user.password"  type="password" id="pass" name="password"  #password="ngModel" title="Password" required>
-          </p>
-          <button type="submit" id="do_login"title="Log In">Log In</button>
-          </form>
+          <label for="pass">Please Login</label>
+          <button type="submit" id="do_login"title="Log In" (click)="login()">Log In</button>
       </div>
     </div>
   </div>
