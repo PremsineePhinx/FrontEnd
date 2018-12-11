@@ -13,10 +13,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  login(){
-    this.oauthService.initImplicitFlow();
-  }
+  
+  login(){  }
 
   
 }

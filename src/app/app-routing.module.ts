@@ -9,13 +9,14 @@ import { CoureInsectionComponent } from './coure-insection/coure-insection.compo
 import { LoginComponent } from './login/login.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthGuard } from './auth.guard.service';
+
 const routes: Routes = [
   {path:'', redirectTo: 'home',pathMatch: 'full'},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'VocabStats', component: VocabComponent, canActivate: [AuthGuard]},
-  { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent, canActivate: [AuthGuard]},
-  { path: 'Course', component: CoureInsectionComponent, canActivate: [AuthGuard]},
-  { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent},
+  { path: 'VocabStats', component: VocabComponent},
+  { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent},
+  { path: 'Course', component: CoureInsectionComponent},
+  { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent},
   { path: 'login', component: LoginComponent },
 
   { path: '**', redirectTo: '' }
@@ -27,7 +28,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     OAuthModule.forRoot({
       resourceServer: {
-          allowedUrls: ['localhost:4200/home'],
+          allowedUrls: ['localhost:4200'],
           sendAccessToken: true
       }
   })
