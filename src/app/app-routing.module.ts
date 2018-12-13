@@ -12,11 +12,11 @@ import { AuthGuard } from './auth.guard.service';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home',pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'VocabStats', component: VocabComponent},
-  { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent},
-  { path: 'Course', component: CoureInsectionComponent},
-  { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'VocabStats', component: VocabComponent },
+  { path: 'VocabStatByCourse/:course', component: VocabByCourseComponent },
+  { path: 'Course', component: CoureInsectionComponent },
+  { path: 'students/:semester/:year/:courseID/:section/:subsection', component: StudentComponent },
   { path: 'login', component: LoginComponent },
 
   { path: '**', redirectTo: '' }

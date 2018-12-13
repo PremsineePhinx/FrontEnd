@@ -69,16 +69,17 @@ export class StudentComponent implements OnInit {
               studentName: this.datas[i].studentName,              
               login: this.datas[i].login,
               last_login: time,
-              stage1:this.datas[i].stage1,
-              stage2:this.datas[i].stage2,
-              stage3:this.datas[i].stage3,
-              stage4:this.datas[i].stage4,
-              stage5:this.datas[i].stage5,
-              stage6:this.datas[i].stage6,
-              stage7:this.datas[i].stage7,
-              stage8:this.datas[i].stage8
+              stage1:this.datas[i].Stage1,
+              stage2:this.datas[i].Stage2,
+              stage3:this.datas[i].Stage3,
+              stage4:this.datas[i].Stage4,
+              stage5:this.datas[i].Stage5,
+              stage6:this.datas[i].Stage6,
+              stage7:this.datas[i].Stage7,
+              stage8:this.datas[i].Stage8
           })
       }
+      console.log(this.students)
       this.dataSource = new MatTableDataSource(this.students);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

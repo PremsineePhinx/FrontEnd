@@ -70,9 +70,9 @@ export class HomeComponent implements OnInit {
     })
     this.apiVocab.getVocabTop()
       .subscribe(data => {this.top = data
-    var ctx = document.getElementById("myPieChart");
+    var ctx = document.getElementById("myBarChart");
     var myPieChart = new Chart(ctx, {
-      type: 'doughnut',
+      type: 'horizontalBar',
       data: {
         datasets: [{
             data: [this.top[0].mistakeStatistic, this.top[1].mistakeStatistic, this.top[2].mistakeStatistic,this.top[3].mistakeStatistic,this.top[4].mistakeStatistic,this.top[5].mistakeStatistic],
@@ -80,7 +80,17 @@ export class HomeComponent implements OnInit {
         labels: [
           this.top[0].hiragana, this.top[1].hiragana, this.top[2].hiragana,this.top[3].hiragana,this.top[4].hiragana,this.top[5].hiragana
           ]
-        }
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    min: 0,    
+                  }
+              }]
+            }
+          }
       });
     })
   }
