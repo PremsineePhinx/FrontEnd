@@ -6,10 +6,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MaterialModule} from './/material.module';
 
-//firebase
-import * as firebase from 'firebase';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 //enviroment
 import { environment } from '../environments/environment';
 //service
@@ -31,7 +27,7 @@ import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.compon
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 
-firebase.initializeApp(environment.firebaseConfig);
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -39,8 +35,6 @@ firebase.initializeApp(environment.firebaseConfig);
     LayoutModule,
     MaterialModule,
     HttpClientModule,
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     FormsModule
     ],
