@@ -35,6 +35,6 @@ export class MyNavComponent {
   }
   
   logout(){
-    // this.oauthService.logOut();
+
   }
 }
