@@ -7,7 +7,6 @@ import { VocabByCourseComponent } from './vocab-by-course/vocab-by-course.compon
 import { HomeComponent } from './home/home.component';
 import { CoureInsectionComponent } from './coure-insection/coure-insection.component';
 import { LoginComponent } from './login/login.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthGuard } from './auth.guard.service';
 
 const routes: Routes = [
@@ -26,12 +25,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    OAuthModule.forRoot({
-      resourceServer: {
-          allowedUrls: ['localhost:4200'],
-          sendAccessToken: true
-      }
-  })
   ],
   exports:[RouterModule],
   declarations: [],

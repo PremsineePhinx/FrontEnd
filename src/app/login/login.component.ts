@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OAuthService } from 'angular-oauth2-oidc';
+import { getOAuthAuthenUrl } from '../app.config'
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,9 +10,10 @@ export class LoginComponent implements OnInit {
 
   user: any = {};
 
-  constructor(private oauthService: OAuthService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    window.location.href = getOAuthAuthenUrl();
   }
   
   login(){  }

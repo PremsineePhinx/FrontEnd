@@ -7,6 +7,5 @@ export const OAUTH_SCOPE = 'cmuitaccount.basicinfo';
 
 export function getOAuthAuthenUrl() {
   let backUrl = window.location.origin + '%2F%23%2Flogin'
-  return `${OAUTH_LOGIN_URL}?response_type=code&client_id=${OAUTH_CLIENT_ID}
-  &redirect_uri=${OAUTH_REDIRECT_URI}&scope=${OAUTH_SCOPE}&state=${backUrl}`;
+  return `${OAUTH_LOGIN_URL}?response_type=code&client_id=${OAUTH_CLIENT_ID}&redirect_uri=${OAUTH_REDIRECT_URI}&scope=${OAUTH_SCOPE}&state='success'`;
 }
