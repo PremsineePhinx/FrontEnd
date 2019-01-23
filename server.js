@@ -24,6 +24,7 @@ app.listen(app.get('port'), function () {
 });
 
 app.post('/getToken',(req, res) => {
-  console.log(req.body)
-  axios.post('https://oauth.cmu.ac.th/v1/GetToken.aspx',req.body, {headers :{'content-type': 'application/x-www-form-urlencoded'}}).then(res => console.log('test' + res.data)).catch(err => console.log(err))
+  axios.post('https://oauth.cmu.ac.th/v1/GetToken.aspx', {}, { params: req.body })
+    .then(res => console.log('test' + res.data))
+    .catch(err => console.log(err))
 })
