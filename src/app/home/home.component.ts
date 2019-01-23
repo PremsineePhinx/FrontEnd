@@ -3,6 +3,9 @@ import { Chart} from 'chart.js';
 import { VocabService } from '../services/vocab.service'
 import { StudentService } from '../services/student.service'
 import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { OAUTH_REDIRECT_URI, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET } from '../app.config';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +19,24 @@ export class HomeComponent implements OnInit {
   semester: any;
   course: any;
   students$: Observable<any>;
-  constructor(private apiVocab:VocabService,private apiStudent:StudentService) { }
+  codeParam
+  constructor(private apiVocab:VocabService,private apiStudent:StudentService, private route:ActivatedRoute, private http:HttpClient) {
+    this.route.queryParamMap.subscribe(params => {
+      if(params.has('code') ){
+        this.http.post('http://localhost:5000/getToken',{
+          code: params.get('code'),
+          redirect_uri: OAUTH_REDIRECT_URI,
+          client_id: OAUTH_CLIENT_ID,
+          client_secret: OAUTH_CLIENT_SECRET,
+          grant_type: 'authorization_code'
+        }).subscribe(data => console.log(data))
+      }
+    })
+   }
 
   ngOnInit() {
+    
+    
     this.apiStudent.getSemster()
       .subscribe(data => {this.semester = data
 

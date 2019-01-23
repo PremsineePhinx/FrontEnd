@@ -16,7 +16,4 @@ export class LoginComponent implements OnInit {
     window.location.href = getOAuthAuthenUrl();
   }
   
-  login(){  }
-
-  
 }
